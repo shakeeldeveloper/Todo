@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>ToDo</title>
+</head>
+<body>
+    <h1>My ToDo App</h1>
+    <p class="subHeading">Stay organized and productive</p>
+    <div class="taskStatus">
+        <p class="completedTasks">0 Completed </p>
+        <p > | </p>
+        <p class="totalTask">0 total task</p>
+    </div>
+    <div class="container">
+    <div class="addContainer">
+        <div class="inputContainer">
+            <input type="text" placeholder="Add a new task" class="taskInput">
+            <button class="addTaskButton" >Add Task</button>
+        </div>
+        <div class="addSelectContainer">
+            <div class="catagoriesContainer">
+                <p class="catagoriesHeading">Category</p>
+                <select class="categoriesDropdown">
+                    <option value="personal">Personal</option>
+                    <option value="work">Work</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="others">Others</option>
+                </select>
+            </div>
+            <div class="sortContainer">
+                <p class="sortHeading">Priority</p>
+                <select class="sortDropdown">
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                    <option value="Low">Low</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="searchContainer">
+        <input type="text"  class="searchInput" placeholder="Search tasks...">
+        <img src="img/filter.png" alt="Search Icon" class="searchIcon">
+        <select class="searchCategoriesDropdown">
+            <option value="all">All</option>
+            <option value="work">Work</option>
+            <option value="personal">Personal</option>
+            <option value="shopping">Shopping</option>
+            <option value="others">Others</option>
+        </select>
+        
+    </div>
+    <section class="taskList" id="taskList">
+        <template id="emptyTemplate">
+            <div class="emptyContainer">
+                <img src="img/checked.png" alt="Empty Icon" class="emptyIcon">
+                <p class="emptyText">No tasks available</p>
+                <p class="emptySubText">Add a task to get started</p>
+            </div>
+        </template>
+        <template id="taskTemplate">
+            <div class="task">
+                <input type="checkbox" />
+                <div class="taskDetails">
+                    <span class="taskTitle">Complete project presentation safkdjfa;lksdjf;akdsjf;ksdjfeiojklJEWL;adsjw;ifjlkdsajwe;ADSKFJWELFJASDLKFJpasjwejf ;lksajdflDFLKDSJSLKDFJ</span>
+                    <div class="tags">
+                        <span class="tagWork">Work</span>
+                        <span class="tagHigh">high</span>
+                    </div>
+                </div>
+                <div class="taskActions">
+                <img src="img/pencil.png" alt="Edit Icon" class="editIcon">
+                <img src="img/close.png" alt="Delete Icon" class="deleteIcon">  
+                </div>
+            </div>
+        </template>
+    </section>
+
+    </div>
+
+    <div class="footer">
+        <p>Made with ❤️ by Muhammad Shakeel</p>
+    <script src="script.js"></script>
+    
+</body>
+</html>
