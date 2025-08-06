@@ -92,10 +92,12 @@ const emptyTemplate = document.getElementById("emptyTemplate");
 const totalTasks = document.querySelector(".totalTask");
 const completedTasks = document.querySelector(".completedTasks");
 function noTasks() {
+    taskTemplateList.innerHTML = ""; // Clear existing tasks
     const emptyClone = emptyTemplate.content.cloneNode(true);
     taskTemplateList.appendChild(emptyClone);
   
 }
+
 if (taskList.length === 0) {
   noTasks();
  }
@@ -202,11 +204,13 @@ function checkSearch(tasks, searchTerm) {
         return; // Exit if no tasks
   
     } else{
+        let empty = true;
         taskList.forEach((t, index) => {
         console.log(selectedCategory)
-        const hasValue = Object.values(t).some(value =>typeof value === "string" && value.includes(searchTerm)
-)
+        const hasValue = Object.values(t).some(value =>typeof value === "string" && value.includes(searchTerm));
+
         if((hasValue)&(t.category === selectedCategory || selectedCategory === "all")) {
+        empty = false;
         const clone = template.content.cloneNode(true);
         clone.querySelector(".taskTitle").textContent = t.task;
         clone.querySelector(".tagWork").textContent = t.category;
@@ -229,7 +233,11 @@ function checkSearch(tasks, searchTerm) {
         taskTemplateList.appendChild(clone);
         }
         else{
-              noTasks(); // Show empty state if no tasks match the search
+          if (empty) {
+            empty = false; 
+            noTasks();
+          }
+            
         }
     });
 }
